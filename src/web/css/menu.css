@@ -14,15 +14,20 @@ body {
 
 
 
-.top {
+.wr {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+.wr .top {
+	width: 100%;
 	height: 150px;
 	background: #0f0f0f;
 }
-.title {
+.wr .top .title {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -35,23 +40,24 @@ body {
 	color: #e9e9e9;
 	user-select: none;
 }
-.title .img {
+.wr .top .title .img {
 	width: 150px;
 	display: inline;
 	image-rendering: pixelated;
 }
-.nav {
-	position: absolute;
-	top: 150px;
-	left: 0;
+.wr .nav {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
 	width: 100%;
 	height: auto;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	background: #0f0f0f;
+	z-index: 1;
 }
-.nav .nav-e {
+.wr .nav .nav-e {
 	width: 180px;
 	height: 80px;
 	text-align: center;
@@ -65,13 +71,80 @@ body {
 	text-decoration: none;
 	text-transform: uppercase;
 }
-.nav .nav-e:hover {
+.wr .nav .nav-e:hover {
 	background: #181818;
 	transition: background 0.3s;
 }
 
 
 
+.wr .menu {
+	width: 100%;
+	background-image: url("../rsrc/chalk-bg.png");
+	background-repeat: repeat;
+}
+.wr .menu .head {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	font-family: Chawp;
+	line-height: 100px;
+	font-size: 80px;
+	color: #e7d954;
+	user-select: none;
+}
+.wr .menu .tb {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%,0);
+	padding: 30px 0 30px 0;
+	font-size: 40px;
+	font-family: Chawp;
+}
+.wr .menu .tb .tb-r {
+	line-height: 45px;
+}
+.wr .menu .tb .tb-r .icn {
+	width: 50px;
+	height: 50px;
+	padding-right: 10px;
+	user-select: none;
+}
+.wr .menu .tb .tb-r .cl0 {
+	color: #87e650;
+}
+.wr .menu .tb .tb-r .cl1 {
+	color: #e39b49;
+}
+.wr .menu .tb .tb-r .cl2 {
+	color: #af4ce5;
+}
+.wr .menu .tb .tb-r .cl3 {
+	color: #4ca8e5;
+}
+.wr .menu .tb .tb-r .cl4 {
+	color: #df34c5;
+}
+.wr .menu .tb .tb-r .cl5 {
+	color: #dc4f28;
+}
+.wr .menu .tb .tb-r .d {
+	padding-left: 5px;
+	font-size: 30px;
+	letter-spacing: 3px;
+	color: #595959;
+	user-select: none;
+}
+.wr .menu .tb .tb-r .price {
+	color: #d3d3d3;
+}
+
+
+
+@font-face {
+	font-family: Chawp;
+	src: url("../rsrc/chawp.otf") format("opentype");
+}
 @media screen and (max-device-width: 500px) {
 	.nav .nav-e {
 		width: 200px;
